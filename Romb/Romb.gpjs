@@ -1,0 +1,224 @@
+{
+    "flipViewport": false,
+    "id": 1,
+    "items": [
+        {
+            "fileName": "Buffer/RombData.bin",
+            "id": 2,
+            "items": [
+                {
+                    "id": 3,
+                    "items": [
+                        {
+                            "count": 3,
+                            "dataType": "Float",
+                            "id": 4,
+                            "name": "pos",
+                            "padding": 0,
+                            "type": "Field"
+                        },
+                        {
+                            "count": 3,
+                            "dataType": "Float",
+                            "id": 5,
+                            "name": "normal",
+                            "padding": 0,
+                            "type": "Field"
+                        }
+                    ],
+                    "name": "Block",
+                    "offset": "0",
+                    "rowCount": "6",
+                    "type": "Block"
+                }
+            ],
+            "type": "Buffer"
+        },
+        {
+            "id": 6,
+            "items": [
+                {
+                    "divisor": 0,
+                    "fieldId": 4,
+                    "id": 7,
+                    "name": "pos",
+                    "normalize": false,
+                    "type": "Attribute"
+                },
+                {
+                    "divisor": 0,
+                    "fieldId": 5,
+                    "id": 8,
+                    "name": "normal",
+                    "normalize": false,
+                    "type": "Attribute"
+                }
+            ],
+            "name": "RombData",
+            "type": "Stream"
+        },
+        {
+            "id": 9,
+            "items": [
+                {
+                    "fileName": "Shaders/RombVertex.glsl",
+                    "id": 10,
+                    "shaderType": "Vertex",
+                    "type": "Shader"
+                },
+                {
+                    "fileName": "Shaders/RombPixel.glsl",
+                    "id": 11,
+                    "shaderType": "Fragment",
+                    "type": "Shader"
+                }
+            ],
+            "name": "Program",
+            "type": "Program"
+        },
+        {
+            "flipVertically": false,
+            "format": "RGBA8_UNorm",
+            "height": "600",
+            "id": 15,
+            "name": "Texture",
+            "samples": 1,
+            "target": "Target2D",
+            "type": "Texture",
+            "width": "800"
+        },
+        {
+            "blendConstant": "#ffffffff",
+            "cullMode": "NoCulling",
+            "frontFace": "CCW",
+            "id": 16,
+            "items": [
+                {
+                    "blendAlphaDest": "Zero",
+                    "blendAlphaEq": "Add",
+                    "blendAlphaSource": "One",
+                    "blendColorDest": "Zero",
+                    "blendColorEq": "Add",
+                    "blendColorSource": "One",
+                    "colorWriteMask": 15,
+                    "id": 17,
+                    "level": 0,
+                    "name": "Display1",
+                    "textureId": 15,
+                    "type": "Attachment"
+                }
+            ],
+            "logicOperation": "NoLogicOperation",
+            "name": "Target",
+            "polygonMode": "Fill",
+            "type": "Target"
+        },
+        {
+            "callType": "ClearTexture",
+            "checked": true,
+            "clearColor": "#ff000000",
+            "clearDepth": 1,
+            "clearStencil": 0,
+            "executeOn": "EveryEvaluation",
+            "id": 18,
+            "name": "Clear Texture",
+            "textureId": 15,
+            "type": "Call"
+        },
+        {
+            "bindingType": "Uniform",
+            "editor": "Expression4x4",
+            "id": 20,
+            "name": "matGeo",
+            "type": "Binding",
+            "values": [
+                "1",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "bindingType": "Uniform",
+            "editor": "Expression4x4",
+            "id": 21,
+            "name": "matVP",
+            "type": "Binding",
+            "values": [
+                "1",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1"
+            ]
+        },
+        {
+            "bindingType": "BufferBlock",
+            "blockId": 3,
+            "id": 22,
+            "name": "pos",
+            "type": "Binding"
+        },
+        {
+            "bindingType": "BufferBlock",
+            "blockId": 3,
+            "id": 23,
+            "name": "normal",
+            "type": "Binding"
+        },
+        {
+            "baseInstance": "0",
+            "callType": "Draw",
+            "checked": true,
+            "count": "",
+            "executeOn": "EveryEvaluation",
+            "first": "0",
+            "id": 25,
+            "instanceCount": "1",
+            "name": "DrawRomb",
+            "primitiveType": "Triangles",
+            "programId": 9,
+            "targetId": 16,
+            "type": "Call",
+            "vertexStreamId": 6
+        }
+    ],
+    "name": "Romb",
+    "renderer": "Vulkan",
+    "reverseCulling": true,
+    "shaderCompiler": "glslang",
+    "shaderCompilerSettings": {
+        "autoMapBindings": "true",
+        "autoMapLocations": "true",
+        "autoSampledTextures": "true",
+        "spirvVersion": "10",
+        "vulkanRulesRelaxed": "true"
+    },
+    "shaderIncludePaths": "",
+    "shaderLanguage": "GLSL",
+    "shaderPreamble": "",
+    "type": "Session"
+}
